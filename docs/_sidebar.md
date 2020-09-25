@@ -1,3 +1,3 @@
 - Getting started
-  - [Installation](installation.md)
-  - [Guide](guide.md)
+  - [Installation](getting-started/installation.md)
+  - [Guide](getting-started/guide.md)
