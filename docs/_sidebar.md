@@ -1,0 +1,3 @@
+- Getting started
+  - [Installation](installation.md)
+  - [Guide](guide.md)
