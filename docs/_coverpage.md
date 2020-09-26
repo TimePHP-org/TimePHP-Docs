@@ -8,4 +8,4 @@
 <!-- - Built-in CLI -->
 
 [GitHub](https://github.com/TimePHP-org/TimePHP)
-[Get Started](#get-started)
+[Get Started](#introduction-to-the-timephp-framework)
