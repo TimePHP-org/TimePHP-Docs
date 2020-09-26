@@ -1,0 +1,27 @@
+{
+  "name": "timephp-docs",
+  "version": "1.0.0",
+  "description": "Script to create changelog files",
+  "main": "changelog.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "node changelog.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TimePHP-org/TimePHP-Docs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "GPL-v3.0",
+  "bugs": {
+    "url": "https://github.com/TimePHP-org/TimePHP-Docs/issues"
+  },
+  "homepage": "https://github.com/TimePHP-org/TimePHP-Docs#readme",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "dotenv": "^8.2.0"
+  }
+}

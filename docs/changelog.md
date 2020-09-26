@@ -1,11 +1,12 @@
 ## 0.0.2-alpha
 
 **Release date** : 2020-09-25 <br>
+**Status** : pre-release <br>
 **Link** : [0.0.2-alpha](https://github.com/TimePHP-org/TimePHP/releases/tag/0.0.2-alpha)
 
 ### Features
 
-- Added database functionalities including `Migration` file and `MigrationInterface`
+- Added database functionalities including `Migration` and `MigrationInterface` file
 
 ### Bug fixes
 
@@ -16,6 +17,7 @@
 ## 0.0.1-alpha
 
 **Release date** : 2020-09-24 <br>
+**Status** : pre-release <br>
 **Link** : [0.0.1-alpha](https://github.com/TimePHP-org/TimePHP/releases/tag/0.0.1-alpha)
 
 ### Features
