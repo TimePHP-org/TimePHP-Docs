@@ -26,4 +26,8 @@ Everything will be set up for you. The only thing you need to do is to navigate 
 php -S localhost:8080 -t App/public
 ```
 
-This framework is also compatible with [Homestead](https://laravel.com/docs/8.x/homestead)
+This framework is also compatible with [Homestead](https://laravel.com/docs/8.x/homestead).For more information about the installation, [click here](getting-started/installation.md)
+
+# Feedback
+
+Contribute to this project by creating a [pull request](https://github.com/TimePHP-org/TimePHP/pulls). In case of problem or to suggest an idea, feel free to create an [issue](https://github.com/TimePHP-org/TimePHP/issues)

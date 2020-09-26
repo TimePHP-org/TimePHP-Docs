@@ -5,6 +5,7 @@
 <!-- > Save time using TimePHP. -->
 
 - Simple and lightweight
+- Component based framework
 <!-- - Built-in CLI -->
 
 [GitHub](https://github.com/TimePHP-org/TimePHP)
