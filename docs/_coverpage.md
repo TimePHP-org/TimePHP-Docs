@@ -5,7 +5,7 @@
 <!-- > Save time using TimePHP. -->
 
 - Simple and lightweight
-- Built-in CLI
+<!-- - Built-in CLI -->
 
 [GitHub](https://github.com/TimePHP-org/TimePHP)
 [Get Started](#get-started)
