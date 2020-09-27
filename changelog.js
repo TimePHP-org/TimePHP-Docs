@@ -17,7 +17,7 @@ axios({
       query: `
       query {
          repository(owner: "TimePHP-Org", name: "TimePHP") {
-            releases(first: 100, orderBy: {field: CREATED_AT, direction: ASC}) {
+            releases(first: 100, orderBy: {field: NAME, direction: ASC}) {
                nodes {
                   createdAt
                   id
