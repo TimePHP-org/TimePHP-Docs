@@ -26,7 +26,7 @@ Everything will be set up for you. The only thing you need to do is to navigate 
 php -S localhost:8080 -t App/public
 ```
 
-This framework is also compatible with [Homestead](https://laravel.com/docs/8.x/homestead).For more information about the installation, [click here](getting-started/installation.md)
+This framework is also compatible with [Homestead](https://laravel.com/docs/8.x/homestead). For more information about the installation, [click here](getting-started/installation.md)
 
 # Feedback
 
