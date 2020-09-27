@@ -17,9 +17,9 @@ axios({
       query: `
       query {
          repository(owner: "TimePHP-Org", name: "TimePHP") {
-            releases(first: 100, orderBy: {field: CREATED_AT, direction: DESC}) {
+            releases(first: 100, orderBy: {field: CREATED_AT, direction: ASC}) {
                nodes {
-                  publishedAt
+                  createdAt
                   id
                   isPrerelease
                   tagName
@@ -51,6 +51,7 @@ axios({
                               nodes {
                                  oid
                                  messageHeadline
+                                 url
                               }
                            }
                         }
@@ -61,18 +62,46 @@ axios({
             `
          }
       }).then((result) => {
-         let date = new Date(release.publishedAt)
+         let date = new Date(release.createdAt)
+         let feat = ""
+         let bug = ""
          content += `
 ## ${release.tagName}
 
-**Release date** : ${date.getFullYear()}-${("0" + date.getMonth()).slice(-2)}-${("0" + date.getDay()).slice(-2)} <br>
+**Release date** : ${date.toLocaleDateString()} <br>
 **Status** : ${release.isPrerelease ? "Pre-release" : "Release"} <br>
 **link** : [${release.tagName}](${release.url})
 `
-         console.log(content)
          let commits = result.data.data.repository.ref.target.history.nodes
-         // console.log(commits);
-      })
 
+         commits.forEach(commit => {
+            if(commit.messageHeadline.startsWith("[add]") || commit.messageHeadline.startsWith("[feat]")){
+               feat += `
+- ${commit.messageHeadline.replace("[add]", "").replace("[feat]", "")} ([${commit.oid.substring(0, 7)}](${commit.url}))`
+            } else if(commit.messageHeadline.startsWith("[fix]") || commit.messageHeadline.startsWith("[bug]")){
+               bug += `
+- ${commit.messageHeadline.replace("[fix]", "").replace("[bug]", "")} ([${commit.oid.substring(0, 7)}](${commit.url}))`
+            }
+         })
+
+         if(feat !== ""){
+            content += ` 
+### Features
+${feat}
+            `
+         }
+
+         if(bug !== ""){
+            content += ` 
+### Bug fixes
+${bug}
+
+<br>
+            `
+         }
+
+         let data = fs.writeFileSync("./docs/changelog.md", content, "utf-8")
+         console.log("Changelog file updated !")
+      })
    })
 })
