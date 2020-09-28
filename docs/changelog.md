@@ -8,9 +8,12 @@
 ### Features
 
 -  Updated database component ([cc998f3](https://github.com/TimePHP-org/TimePHP/commit/cc998f396b171ca82bb17948ff23f3b25f15673a))
+-  migration files ([9ec4da2](https://github.com/TimePHP-org/TimePHP/commit/9ec4da2dccb2b9e9c8cffbfc704968cd1020a00e))
           
 ### Bug fixes
 
+-  Fixed database usage ([17f38bc](https://github.com/TimePHP-org/TimePHP/commit/17f38bcf502ddf934e41ee40126e95d942d9e61c))
+-  Removing database component ([02c9451](https://github.com/TimePHP-org/TimePHP/commit/02c9451d89b6552aa622580a3f39637b057553b0))
 -  Fixed database namespace ([dec40f9](https://github.com/TimePHP-org/TimePHP/commit/dec40f9e481bdc6470336b86585edea38b9797c8))
 
 <br>

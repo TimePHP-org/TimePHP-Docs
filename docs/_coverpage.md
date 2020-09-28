@@ -1,6 +1,6 @@
 ![logo](_media/logo_solo.svg)
 
-# Save time using TimePHP <small>0.0.2-alpha</small>
+# Save time using TimePHP <small>0.0.3-alpha</small>
 
 <!-- > Save time using TimePHP. -->
 

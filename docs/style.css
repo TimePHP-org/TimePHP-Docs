@@ -5,3 +5,12 @@ a.app-name-link img {
 div.cover-main p img{
    height: 200px !important;
 }
+
+article#main ul li {  
+   list-style-image: url("./_media/li_marker.svg");
+   line-height: 35px;
+}
+
+.markdown-section pre>code.lang-tree{
+   line-height: 16px;
+}

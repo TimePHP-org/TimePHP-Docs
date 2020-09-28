@@ -55,7 +55,7 @@ axios({
                               oid
                               messageHeadline
                               url
-                              pushedDate
+                              committedDate
                            }
                         }
                      }
