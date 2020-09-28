@@ -6,6 +6,11 @@ let content = ""
 
 const tagNameArg = process.argv.slice(2)[0];
 
+let firstCommit = true
+
+let jsonString = fs.readFileSync('./config.json')
+let config = JSON.parse(jsonString)
+
 axios({
    url: 'https://api.github.com/graphql',
    method: 'post',
@@ -45,11 +50,12 @@ axios({
                ref(qualifiedName: "${tagNameArg}") {
                   target {
                      ... on Commit {
-                        history(last: 100) {
+                        history(since: "${config.lastCommit}") {
                            nodes {
                               oid
                               messageHeadline
                               url
+                              pushedDate
                            }
                         }
                      }
@@ -71,6 +77,16 @@ axios({
       let commits = result.data.data.repository.ref.target.history.nodes
 
       commits.forEach(commit => {
+         
+         if(firstCommit){
+            config["lastCommit"] = commit.pushedDate
+            let data = JSON.stringify(config);
+            fs.writeFileSync('./config.json', data);
+         }
+         firstCommit = false
+
+         
+
          if(commit.messageHeadline.startsWith("[add]") || commit.messageHeadline.startsWith("[feat]")){
             feat += `
 - ${commit.messageHeadline.replace("[add]", "").replace("[feat]", "")} ([${commit.oid.substring(0, 7)}](${commit.url}))`
