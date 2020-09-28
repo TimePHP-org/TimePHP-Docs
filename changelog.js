@@ -45,7 +45,7 @@ axios({
                ref(qualifiedName: "${tagNameArg}") {
                   target {
                      ... on Commit {
-                        history(first: 100) {
+                        history(last: 100) {
                            nodes {
                               oid
                               messageHeadline
