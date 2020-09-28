@@ -1,7 +1,7 @@
-## 0.0.2-alpha
-**Release date** : 2020-09-25 <br>
+## 0.0.3-alpha
+**Release date** : 2020-09-28 <br>
 **Status** : Pre-release <br>
-**link** : [0.0.2-alpha](https://github.com/TimePHP-org/TimePHP/releases/tag/0.0.2-alpha)
+**link** : [0.0.3-alpha](https://github.com/TimePHP-org/TimePHP/releases/tag/0.0.3-alpha)
  
 ### Features
 
@@ -12,6 +12,7 @@
           
 ### Bug fixes
 
+-  Fixed database namespace ([dec40f9](https://github.com/TimePHP-org/TimePHP/commit/dec40f9e481bdc6470336b86585edea38b9797c8))
 -  package name ([7fa30c6](https://github.com/TimePHP-org/TimePHP/commit/7fa30c6a2572f25fe0e551b30e32a7e80bd3235e))
 -  dependencies & controller/router files ([cb7208a](https://github.com/TimePHP-org/TimePHP/commit/cb7208a2bd0a7a0b005bd083919a75cc78347326))
 -  router lib ([d75c785](https://github.com/TimePHP-org/TimePHP/commit/d75c7859adaed52a71d745e7b59d0970805ce8a8))
