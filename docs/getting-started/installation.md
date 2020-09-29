@@ -2,9 +2,9 @@
 
 ## System requirements
 
-Even if **TimePHP** is very lightweight, it still needs some PHP extension.
+Even if **TimePHP** is very lightweight, it still needs some PHP extensions.
 
-- PHP >= 7.9
+- PHP &ge; 7.9
 - MBString extension
 - PDO for MySQL
 - Composer
@@ -30,12 +30,8 @@ This comment will create a **minimal version** of a TimePHP project and install 
 │   │   ├───Entity
 │   │   ├───Utils
 │   │   └───Views
-│   │       └───template
 │   └───public
 │       └───assets
-│           ├───css
-│           ├───js
-│           └───src
 ├───bin
 ├───config
 └───vendor
