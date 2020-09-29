@@ -22,17 +22,3 @@ composer create-project timephp/skeleton:0.0.1-alpha
 If you want to rename the project before its creation, add the `--prefer-dist project_name` flag at the end of the previous command.
 
 This comment will create a **minimal version** of a TimePHP project and install all the dependencies that are needed including the core functionalities `timephp/timephp` and some scripts in `timephp/script`.
-
-```tree
-├───App
-│   ├───Bundle
-│   │   ├───Controllers
-│   │   ├───Entity
-│   │   ├───Utils
-│   │   └───Views
-│   └───public
-│       └───assets
-├───bin
-├───config
-└───vendor
-```
