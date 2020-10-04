@@ -1,10 +1,12 @@
 - Getting started
   - [Installation](getting-started/installation.md)
   - [Architecture](getting-started/architecture.md)
-  - [Guide](getting-started/guide.md)
-- Foundations
-  - [Routing](foundations/routing.md)
-  - [Controller](foundations/controller.md)
+- Core
+  - [Routing](core/routing.md)
+  - [CLI](core/cli.md)
+  - [Controller](core/controller.md)
+  - [Entity](core/entity.md)
+  - [Repository](core/repository.md)
 - Components
   - [Images](components/image.md)
 

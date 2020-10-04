@@ -16,9 +16,9 @@ Each of these extensions are includes in the [Homestead](https://laravel.com/doc
 Using [composer](https://getcomposer.org/), you can simply type the `create-project` command on your terminal : 
 
 ```bash
-composer create-project timephp/skeleton:0.0.1-alpha
+composer create-project timephp/skeleton:0.0.4
 ```
 
 If you want to rename the project before its creation, add the `--prefer-dist project_name` flag at the end of the previous command.
 
-This command will create a **minimal version** of a TimePHP project and install all the dependencies that are needed including the core functionalities `timephp/timephp` and some scripts in `timephp/script`.
+This command will create a **minimal version** of a TimePHP project and install all the dependencies that are needed including the core functionalities `timephp/timephp` and the database module `timephp/database`.
