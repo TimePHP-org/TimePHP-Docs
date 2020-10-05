@@ -187,3 +187,78 @@ Each `Entity` has its own `repository`. You don't have to create it, it's automa
 
 For more information about `Repository`, please check out the [Repository](core/repository.md) section.
 
+### Services
+
+`Services` contain some specific functionalities such as, for instance : json convertion or generate random string. Those services can be used anywhere in your controller using the `container`.
+
+A service in general look like this : 
+
+```php
+namespace App\Bundle\Services;
+
+class MainService {
+
+   public function function_name() {
+      // ... functionality
+   }
+
+}
+```
+They can be used in any controller using the `get` function on the container like so :
+```php
+$this->container->get(App\Bundle\Services\MainService::class)->function_name();
+```
+
+For more information about `Services`, check ou the [Services](core/service.md) section.
+
+### Utils
+
+`Utils` directory contains class with functions. It is similar to services but utils function **can not** be used through the container. They have to be imported.
+
+`Utils` class structure is very simple : 
+
+```php
+namespace App\Bundle\Utils;
+
+class Functions{
+   
+}
+```
+
+You can then add functions to this class.
+
+For more information about `Utils` classes, check out the [Utils](core/utils.md) section.
+
+### Views
+
+The `Views` directory contains all the interfaces that can be displayed to the user. **TimePHP** uses the **twig** template engine. It is robuste, easy to use and very flexible.
+
+```html
+{% extends "template/layout.twig" %}
+{% block body %}
+
+   <h1>{{ message }}</h1>
+
+   {# {{ twig_function() }} #}
+
+{% endblock %}
+```
+Each view need to extends the basic layout located in `template/layout`.
+
+You can write basic html but also twig function like : 
+
+```html
+{% foreach user in users %}
+   <p>{{ user.username }}</p>
+{% endfor %}
+```
+
+Using twig, you can also write if/else statement.
+
+You can easily create a `views` using the following command : 
+
+```bash
+php bin/cli make:view
+```
+
+For more information about `views`, check out the [Views](core/views.md) section

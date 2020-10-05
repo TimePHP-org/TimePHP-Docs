@@ -18,8 +18,4 @@ They are both equivalent to :
 SELECT * FROM User WHERE name = 'John';
 ```
 
-The difference between those two queries is that, **pseudo-native queries** return an `entity` while **native queries** return an `array`.<br
-
-```sql
-SELECT * FROM User WHERE name = 'John';
-```
+The difference between those two queries is that, **pseudo-native queries** return an `entity` while **native queries** return an `array`.

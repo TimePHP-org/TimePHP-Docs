@@ -7,6 +7,9 @@
   - [Controller](core/controller.md)
   - [Entity](core/entity.md)
   - [Repository](core/repository.md)
+  - [Service](core/service.md)
+  - [Utils](core/utils.md)
+  - [Views](core/views.md)
 - Components
   - [Images](components/image.md)
 
