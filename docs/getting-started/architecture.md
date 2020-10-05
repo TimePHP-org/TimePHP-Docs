@@ -164,4 +164,26 @@ For more information about `Entity` and how to use them, checl out the [Entity](
 
 ### Repository
 
-[Repository](core/repository.md)
+**TimePHP** uses the repository design pattern. Those repositories contain database functions to prevent database query in controller.<br>
+This design pattern can also be used to organize your application.
+
+```php
+namespace App\Bundle\Repository;
+
+use App\Bundle\Entity\User;
+use Illuminate\Database\Capsule\Manager;
+
+class UserRepository {
+
+   public function getAllUsers(){
+      $users = User::all();
+      return $users;
+   }
+   
+}
+```
+
+Each `Entity` has its own `repository`. You don't have to create it, it's automatically created when you use the `make:entity` command.
+
+For more information about `Repository`, please check out the [Repository](core/repository.md) section.
+
