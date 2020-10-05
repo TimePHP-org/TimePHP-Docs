@@ -16,7 +16,7 @@ Each of these extensions are includes in the [Homestead](https://laravel.com/doc
 Using [composer](https://getcomposer.org/), you can simply type the `create-project` command on your terminal : 
 
 ```bash
-composer create-project timephp/skeleton:0.0.4
+composer create-project timephp/skeleton:0.0.5
 ```
 
 If you want to rename the project before its creation, add the `--prefer-dist project_name` flag at the end of the previous command.
