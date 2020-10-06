@@ -6,8 +6,10 @@ Even if **TimePHP** is very lightweight, it still needs some PHP extensions.
 
 - PHP &ge; 7.9
 - MBString extension
+- OpenSSL extension
 - PDO for MySQL
 - Composer
+- Git
 
 Each of these extensions are includes in the [Homestead](https://laravel.com/docs/8.x/homestead) box which makes it easier to create your futur website.
 
