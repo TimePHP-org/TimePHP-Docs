@@ -10,6 +10,8 @@
   - [Service](core/service.md)
   - [Utils](core/utils.md)
   - [Views](core/views.md)
+  - [Option](core/option.md)
+  - [Container configuration](core/container-configuration.md)
 - Components
   - [Images](components/image.md)
 

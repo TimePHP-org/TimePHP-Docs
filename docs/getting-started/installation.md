@@ -9,7 +9,7 @@ Even if **TimePHP** is very lightweight, it still needs some PHP extensions.
 - PDO for MySQL
 - Composer
 
-Each of these extensions are includes in the [Homestead](https://laravel.com/docs/8.x/homestead) box which makes it easier to create your futur website.
+Each of these extensions are includes  the [Homestead](https://laravel.com/docs/8.x/homestead) box which makes it easier to create your futur website.
 
 ## Project creation
 

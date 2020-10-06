@@ -262,3 +262,59 @@ php bin/cli make:view
 ```
 
 For more information about `views`, check out the [Views](core/views.md) section
+
+## Config folder
+
+The `config` folder contains some options for your application. It contains :
+- .env file
+- option file
+- container
+  - repository container
+  - services container
+
+### Environment file
+
+The `.env` file is used to store credentials or sensitive informations such as : database user and password, api token, ...
+
+Developers can use this file to store those informations and then use them through the `$_ENV`global variable.
+
+### Option
+
+Because **TimePHP** does not necessarily fit your purposes, you can add options the your application.
+
+You can add some option for your the router or for the twig renderer.
+
+```php
+return [
+   "types" => [
+      [
+         "id" => "s",
+         "regex" => "[a-z0-9]+(?:-[a-z0-9]+)*"
+      ]
+   ],
+   "twig" => [
+      [
+         "name" => "hello",
+         "function" => function() {
+            return "hello world !";
+         }
+      ]
+   ]
+];
+```
+
+For more information about `Options`, check out the [option](core/option.md) section.
+
+### Container
+
+**TimePHP** complies with the `PSR-11` standard about containers. They are used to use them in any controller. But you need to configure them during the development process.
+
+The container folder contains two files. One for the `repositories configuration` and the other one for the `services configuration`.
+
+For more information about `containers configuration`, check out the [container configuration](core/container-configuration.md) section
+
+## Let's code
+
+By reading this, you have now the key steps to use **TimPHP**. You can create a simple application using those informations.
+
+You can now check the [full documentation](core/routing.md) in the core documentation.
