@@ -8,12 +8,12 @@
   - [Entity](core/entity.md)
   - [Repository](core/repository.md)
   - [Service](core/service.md)
-  - [Utils](core/utils.md)
   - [Views](core/views.md)
-  - [Option](core/option.md)
-  - [Container configuration](core/container-configuration.md)
+  - [Option](core/options.md)
 - Components
   - [Images](components/image.md)
+  - [Files](components/files.md)
+  - [Rest Support](components/rest.md)
 
 <hr id="hr-sidebar">
 

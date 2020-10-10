@@ -16,9 +16,8 @@ require __DIR__ . "/../../vendor/autoload.php";
 require __DIR__ . "/../../config/bootstrap.php";
 
 use TimePHP\Foundation\Router;
-use App\Bundle\Services\TestService;
 
-$router = new Router($options, $twig->getRenderer(), $container);
+$router = new Router($options, $twig->getRenderer());
 
 $router->initialize($routes)->run();
 ```
@@ -45,7 +44,6 @@ This folder contains all the **main functionalities** of your application includ
 - Entity
 - Repository
 - Services
-- Utils
 - Views
 
 During the development of your application, you will mainly spend your time in those folders.
@@ -58,15 +56,15 @@ Controllers contains the **logic** of your application. Send variable to the cor
 namespace App\Bundle\Controllers;
 
 use TimePHP\Foundation\Router;
-use TimePHP\Foundation\Controller;
+use TimePHP\Foundation\AbstractController;
 
-class HomeController extends Controller
+class HomeController extends AbstractController
 {
 
     public function homeFunction(){
 
-        echo $this->twig->render('home.twig', [
-            "message" => "Hello World!"
+        return $this->render('home.twig', [
+            "message" => "Hello World !"
         ]);
 
     }
@@ -189,7 +187,7 @@ For more information about `Repository`, please check out the [Repository](core/
 
 ### Services
 
-`Services` contain some specific functionalities such as, for instance : json convertion or generate random string. Those services can be used anywhere in your controller using the `container`.
+`Services` contain some specific functionalities such as, for instance : json convertion or generate random string.
 
 A service in general look like this : 
 
@@ -204,30 +202,8 @@ class MainService {
 
 }
 ```
-They can be used in any controller using the `get` function on the container like so :
-```php
-$this->container->get(App\Bundle\Services\MainService::class)->function_name();
-```
 
 For more information about `Services`, check ou the [Services](core/service.md) section.
-
-### Utils
-
-`Utils` directory contains class with functions. It is similar to services but utils function **can not** be used through the container. They have to be imported.
-
-`Utils` class structure is very simple : 
-
-```php
-namespace App\Bundle\Utils;
-
-class Functions{
-   
-}
-```
-
-You can then add functions to this class.
-
-For more information about `Utils` classes, check out the [Utils](core/utils.md) section.
 
 ### Views
 
@@ -268,9 +244,6 @@ For more information about `views`, check out the [Views](core/views.md) section
 The `config` folder contains some options for your application. It contains :
 - .env file
 - option file
-- container
-  - repository container
-  - services container
 
 ### Environment file
 
@@ -278,11 +251,11 @@ The `.env` file is used to store credentials or sensitive informations such as :
 
 Developers can use this file to store those informations and then use them through the `$_ENV`global variable.
 
-### Option
+### Options
 
 Because **TimePHP** does not necessarily fit your purposes, you can add options the your application.
 
-You can add some option for your the router or for the twig renderer.
+You can add some options for your the router or for the twig renderer.
 
 ```php
 return [
@@ -303,15 +276,7 @@ return [
 ];
 ```
 
-For more information about `Options`, check out the [option](core/option.md) section.
-
-### Container
-
-**TimePHP** complies with the `PSR-11` standard about containers. They are used to use them in any controller. But you need to configure them during the development process.
-
-The container folder contains two files. One for the `repositories configuration` and the other one for the `services configuration`.
-
-For more information about `containers configuration`, check out the [container configuration](core/container-configuration.md) section
+For more information about `Options`, check out the [option](core/options.md) section.
 
 ## Let's code
 
