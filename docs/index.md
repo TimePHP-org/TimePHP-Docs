@@ -14,7 +14,7 @@ Rasmus Lerdorf once said
 Get started by installing the TimePHP framework skeleton
 
 ```bash
-composer create-project timephp/skeleton:0.0.9 --prefer-dist application_name
+composer create-project timephp/skeleton --prefer-dist application_name
 ```
 
 Everything will be set up for you. The only thing you need to do is to navigate to you project and start your development server using the built-in PHP server.

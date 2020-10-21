@@ -55,7 +55,6 @@ Controllers contains the **logic** of your application. Send variable to the cor
 ```php
 namespace App\Bundle\Controllers;
 
-use TimePHP\Foundation\Router;
 use TimePHP\Foundation\AbstractController;
 
 class HomeController extends AbstractController
@@ -90,15 +89,14 @@ namespace App\Bundle\Entity;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model {
-
+class Post extends Model {
 
    /**
     * The table associated with the model.
     *
     * @var string
     */
-   protected $table = 'User';
+   protected $table = 'Post';
    
    /**
     * The primary key associated with the table.
@@ -136,8 +134,7 @@ class User extends Model {
     *
     * @var array
     */
-   protected $fillable = ["username", "password", ...];
-
+   protected $fillable = ["uuid", "title", "content", ...];
 
    public static function boot(){
       parent::boot();
@@ -168,14 +165,14 @@ This design pattern can also be used to organize your application.
 ```php
 namespace App\Bundle\Repository;
 
-use App\Bundle\Entity\User;
+use App\Bundle\Entity\Post;
 use Illuminate\Database\Capsule\Manager;
 
-class UserRepository {
+class PostRepository {
 
-   public function getAllUsers(){
-      $users = User::all();
-      return $users;
+   public function getAllPosts(){
+      $posts = Post::all();
+      return $posts;
    }
    
 }
@@ -196,8 +193,8 @@ namespace App\Bundle\Services;
 
 class MainService {
 
-   public function function_name() {
-      // ... functionality
+   public static function function_name() {
+      // code ...
    }
 
 }
@@ -215,8 +212,6 @@ The `Views` directory contains all the interfaces that can be displayed to the u
 
    <h1>{{ message }}</h1>
 
-   {# {{ twig_function() }} #}
-
 {% endblock %}
 ```
 Each view need to extends the basic layout located in `template/layout`.
@@ -224,8 +219,8 @@ Each view need to extends the basic layout located in `template/layout`.
 You can write basic html but also twig function like : 
 
 ```html
-{% foreach user in users %}
-   <p>{{ user.username }}</p>
+{% foreach post in posts %}
+   <p>{{ post.title }}</p>
 {% endfor %}
 ```
 
@@ -249,30 +244,34 @@ The `config` folder contains some options for your application. It contains :
 
 The `.env` file is used to store credentials or sensitive informations such as : database user and password, api token, ...
 
-Developers can use this file to store those informations and then use them through the `$_ENV`global variable.
+Developers can use this file to store those informations and then use them through the `$_ENV` global variable.
 
 ### Options
 
-Because **TimePHP** does not necessarily fit your purposes, you can add options the your application.
+Because **TimePHP** does not necessarily fit your purposes, you can add options to your application.
 
-You can add some options for your the router or for the twig renderer.
+You can add some options for your router or for the twig renderer.
 
 ```php
+use App\Bundle\Twig\FilterTwig;
+use App\Bundle\Twig\FunctionTwig;
+
 return [
    "types" => [
       [
-         "id" => "s",
-         "regex" => "[a-z0-9]+(?:-[a-z0-9]+)*"
+         "id" => "uuid",
+         "regex" => "[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}",
       ]
    ],
    "twig" => [
       [
-         "name" => "hello",
-         "function" => function() {
-            return "hello world !";
-         }
+         "name" => "twig_function_name",
+         "type" => "function",
+         "class" => FunctionTwig::class,
+         "function" => "class_function_name",
       ]
-   ]
+   ],
+   
 ];
 ```
 
