@@ -4,6 +4,7 @@
 - Core
   - [Routing](core/routing.md)
   - [Controller](core/controller.md)
+  - [Session](core/session.md)
   - [Entity](core/entity.md)
   - [Repository](core/repository.md)
   - [Service](core/service.md)
