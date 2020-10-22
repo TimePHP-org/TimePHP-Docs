@@ -6,6 +6,8 @@ let content = ""
 
 const tagNameArg = process.argv.slice(2)[0];
 
+const repo = "TimePHP-Rest";
+
 let firstCommit = true
 
 let jsonString = fs.readFileSync('./config.json')
@@ -21,7 +23,7 @@ axios({
    data: {
       query: `
       query {
-         repository(owner: "TimePHP-Org", name: "TimePHP") {
+         repository(owner: "TimePHP-Org", name: "${repo}") {
             release(tagName:"${tagNameArg}") {
                createdAt
                id
@@ -34,7 +36,7 @@ axios({
       `
    }
 }).then((result) => {
-
+   // console.table(result.data.data.repository.release.tagName);
    let release = result.data.data.repository.release
    axios({
       url: 'https://api.github.com/graphql',
@@ -46,7 +48,7 @@ axios({
       data: {
          query: `
          query {
-            repository(owner: "TimePHP-Org", name: "TimePHP") {
+            repository(owner: "TimePHP-Org", name: "${repo}") {
                ref(qualifiedName: "${tagNameArg}") {
                   target {
                      ... on Commit {
@@ -79,7 +81,7 @@ axios({
       commits.forEach(commit => {
          
          if(firstCommit){
-            config["lastCommit"] = commit.pushedDate
+            config["lastCommit"] = commit.committedDate
             let data = JSON.stringify(config);
             fs.writeFileSync('./config.json', data);
          }

@@ -17,4 +17,12 @@
 
 <hr id="hr-sidebar">
 
-- [Changelog](changelog.md)
+- Changelogs
+  - [TimePHP](changelogs/timephp.md)
+  - [Database](changelogs/database.md)
+  - [Skeleton](changelogs/skeleton.md)
+  - [Url Parser](changelogs/url-parser.md)
+  - [Rest](changelogs/rest.md)
+  - [Files](changelogs/files.md)
+  - [Markdown](changelogs/markdown.md)
+  - [Input Validator](changelogs/input-validator.md)
