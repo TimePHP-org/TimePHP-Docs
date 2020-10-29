@@ -4,7 +4,7 @@
 
 Even if **TimePHP** is very lightweight, it still needs some PHP extensions.
 
-- PHP &ge; 7.9
+- PHP &ge; 7.4
 - MBString extension
 - OpenSSL extension
 - PDO for MySQL
